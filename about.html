@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>About Nautilus Replacement</title>
+
+  <script type="application/javascript"
+    src="bower_components/angular/angular.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-material/angular-material.min.js"></script>
+
+  <link rel="stylesheet"
+    href="bower_components/material-design-icons/iconfont/material-icons.css">
+  <link rel="stylesheet"
+    href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet"
+    href="style.css">
+
+</head>
+<body ng-app="aboutModule">
+
+  <section id="aboutRoot"
+    layout="column"
+    layout-fill>
+    <header>
+      <h1>Nautilus Replacement</h1>
+      <p>v0.0.1-SNAPSHOT</p>
+    </header>
+    <md-content layout
+      flex>
+      <md-tabs layout-fill>
+        <md-tab label="Package">
+          <md-content class="md-padding">
+            Package
+          </md-content>
+        </md-tab>
+        <md-tab label="Credits">
+          <md-content class="md-padding">
+            Credits
+          </md-content>
+        </md-tab>
+        <md-tab label="License">
+          <md-content class="md-padding">
+            <pre style="margin: 24px 16px;">
+Nautilus Replacement v0.0.1-SNAPSHOT
+Copyright (c) 2017 Callan Peter Milne
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+            </pre>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </section>
+
+  <script type="application/javascript"
+    src="about.js"></script>

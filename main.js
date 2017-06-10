@@ -48,6 +48,13 @@
 
   });
 
+  app.factory("nwWindow", nwWindowFactory);
+
+  nwWindowFactory.$inject = [];
+  function nwWindowFactory () {
+    return nw.Window;
+  }
+
   app.factory("FileSystemObject", FileSystemObjectFactory);
 
   FileSystemObjectFactory.$inject = [];
@@ -139,14 +146,20 @@
 
   app.controller("WindowController", WindowController);
 
-  WindowController.$inject = ["$timeout", "NavigationList", "Directory"];
-  function WindowController (  $timeout,   NavigationList,   Directory) {
+  WindowController.$inject = ["$timeout", "NavigationList", "Directory", "nwWindow"];
+  function WindowController (  $timeout,   NavigationList,   Directory,   nwWindow) {
 
     var $w = this;
 
     this.showHidden = false;
     this.fabSpeedDialOpen = false;
     this.tooltipVisible = true;
+
+    this.showAbout = function ($event) {
+      nwWindow.open("about.html", {}, newWindow => {
+
+      });
+    };
 
     this.info = {
       nodeVersion: process.version,

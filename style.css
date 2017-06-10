@@ -26,7 +26,26 @@ body {
   font-family: "Ubuntu";
 }
 
+section#aboutRoot md-tab-content,
+section#aboutRoot md-tab-content md-content {
+  background-color: #e3e3e3;
+}
+
+section#aboutRoot header {
+  padding: 24px;
+}
+
+section#aboutRoot header h1,
+section#aboutRoot header p {
+  margin: 0;
+}
+
+section#aboutRoot md-tabs-canvas {
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
 #appRoot md-toolbar md-input-container.md-toolbar-theme {
+
 }
 
 #appRoot md-toolbar md-input-container.md-toolbar-theme .md-input {
