@@ -1,0 +1,59 @@
+/**
+ * https://github.com/eviratec/nautilus-replacement
+ * Copyright (c) 2017 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ * FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#appRoot md-toolbar md-input-container.md-toolbar-theme {
+}
+
+#appRoot md-toolbar md-input-container.md-toolbar-theme .md-input {
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0);
+  padding: 0px 8px;
+  font-size: 16.6px;
+  transition: all 99ms;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+#appRoot md-toolbar md-input-container.md-toolbar-theme .md-input:focus,
+#appRoot md-toolbar md-input-container.md-toolbar-theme .md-input:hover {
+  color: rgba(255,255,255,1);
+  border-bottom-width: 1px;
+}
+
+#appRoot md-toolbar md-input-container.md-toolbar-theme .md-input:focus {
+  background-color: rgba(0,0,0,0.2);
+}
+
+#appRoot md-toolbar md-input-container.md-toolbar-theme .md-errors-spacer {
+  display: none;
+}
+
+#appRoot md-content header {
+  padding: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  position: relative;
+  background-color: rgba(0,0,0,0.1);
+}
+
+#appRoot md-content header h1 {
+  margin: 0;
+}

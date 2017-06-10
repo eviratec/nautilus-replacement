@@ -1,0 +1,27 @@
+{
+  "name": "nautilus-replacement",
+  "description": "",
+  "main": "app.html",
+  "authors": [
+    "Callan Milne <callan.milne@eviratec.com.au>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4"
+  },
+  "dependencies": {
+    "material-design-icons": "^3.0.1"
+  }
+}

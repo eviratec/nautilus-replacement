@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>Hello World!</title>
+
+  <script type="application/javascript"
+    src="bower_components/angular/angular.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script type="application/javascript"
+    src="bower_components/angular-material/angular-material.min.js"></script>
+
+  <link rel="stylesheet"
+    href="bower_components/material-design-icons/iconfont/material-icons.css">
+  <link rel="stylesheet"
+    href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet"
+    href="style.css">
+
+</head>
+<body ng-app="nautilusReplacement">
+
+  <div id="appRoot"
+    ng-controller="WindowController as $w"
+    layout="column"
+    layout-fill>
+
+    <md-toolbar md-theme="toolbar">
+      <div class="md-toolbar-tools" layout="row">
+        <md-button class="md-icon-button">
+          <span class="material-icons">
+            arrow_back
+          </span>
+        </md-button>
+        <md-input-container flex>
+          <input ng-model="$w.location.str" />
+        </md-input-container>
+        <md-menu>
+          <md-button class="md-icon-button">
+            <span class="material-icons">
+              menu
+            </span>
+          </md-button>
+        </md-menu>
+      </div>
+    </md-toolbar>
+
+    <md-content layout="column"
+      flex>
+      <header>
+        <h1>{{ $w.location.dirname }}</h1>
+      </header>
+      <section style="overflow-y: scroll;overflow-x: hidden;"
+        flex>
+        <ul>
+          <li ng-repeat="$item in $w.location.contents">
+            {{ $item }}
+          </li>
+        </ul>
+      </section>
+    </md-content>
+
+  </div>
+
+  <script type="application/javascript"
+    src="main.js"></script>
