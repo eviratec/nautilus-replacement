@@ -83,11 +83,39 @@
           <md-content layout="column"
             flex>
             <header>
+              <div class="pwd-breadcrumbs md-caption"
+                layout-align="start center"
+                layout="row">
+                <span style="">
+                  <a href="#"
+                    class="md-button md-no-style md-primary"
+                    style="min-width: auto;padding-left: 8px;padding-right: 8px;line-height: 24px;min-height: 24px;"
+                    ng-click="$w.handleClick({uri:'/'}, $event)">
+                    /
+                  </a>
+                  <md-icon class="material-icons">
+                    chevron_right
+                  </md-icon>
+                </span>
+                <span ng-repeat="part in $w.location.uriParts"
+                  ng-if="part.uri && !$last">
+                  <a href="#"
+                    class="md-button md-no-style md-primary"
+                    style="min-width: auto;padding-left: 8px;padding-right: 8px;line-height: 24px;min-height: 24px;"
+                    ng-click="$w.handleClick(part, $event)"
+                    ng-bind="part.basename">
+                  </a>
+                  <md-icon class="material-icons">
+                    chevron_right
+                  </md-icon>
+                </span>
+              </div>
               <div class="pwd-base"
+                style="margin-top: 8px;"
                 layout="row"
                 layout-align="start center">
                 <span class="material-icons"
-                  style="margin-right: 8px;">
+                  style="margin-right: 8px;font-size:36px;height:36px;width:36px;">
                   folder_open
                 </span>
                 <h1>{{ $w.location.dirname }}</h1>

@@ -145,6 +145,7 @@
       path: "",
       dirname: "",
       contents: [],
+      uriParts: [],
     };
 
     this.favourites = {
@@ -202,9 +203,18 @@
     }
 
     function setLoc (uri) {
+      let uriParts;
       $w.location.str = uri;
       $w.location.path = path.parse(uri).dir;
       $w.location.dirname = path.parse(uri).base;
+      $w.location.uriParts.splice(0);
+      uriParts = uri.split(/\//g);
+      $w.location.uriParts.push(...uriParts.map((part, index) => {
+        return {
+          basename: part.replace(/\/$/, ""),
+          uri: uriParts.slice(0, index + 1).join("/"),
+        };
+      }));
     }
 
   }
