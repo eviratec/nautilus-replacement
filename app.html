@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Hello World!</title>
+  <title>Nautilus Replacement</title>
 
   <script type="application/javascript"
     src="bower_components/angular/angular.min.js"></script>
@@ -41,30 +41,77 @@
           <input ng-model="$w.location.str" />
         </md-input-container>
         <md-menu>
-          <md-button class="md-icon-button">
+          <md-button class="md-icon-button"
+            ng-click="$w.openMenu($mdMenu, $event)">
             <span class="material-icons">
               menu
             </span>
           </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="ctrl.redial($event)">
+                <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                Redial
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
         </md-menu>
       </div>
     </md-toolbar>
 
-    <md-content layout="column"
-      flex>
-      <header>
-        <h1>{{ $w.location.dirname }}</h1>
-      </header>
-      <section style="overflow-y: scroll;overflow-x: hidden;"
-        flex>
-        <ul>
-          <li ng-repeat="$item in $w.location.contents">
-            {{ $item }}
-          </li>
-        </ul>
-      </section>
-    </md-content>
-
+    <div flex>
+      <div layout="row"
+        layout-fill>
+        <div style="width:300px;overflow-y: scroll;overflow-x:hidden;border-right: 1px solid rgba(0,0,0,0.12);">
+          <section layout="column">
+            <md-subheader class="md-primary">
+              Favourites
+            </md-subheader>
+            <md-list>
+              <md-list-item ng-repeat="$item in $w.favourites.contents"
+                ng-click="$w.handleClick($item, $event)">
+                <span class="inset material-icons">
+                  folder
+                </span>
+                {{ $item.basename }}
+              </md-list-item>
+            </md-list>
+          </section>
+        </div>
+        <div flex
+          layout>
+          <md-content layout="column"
+            flex>
+            <header>
+              <div class="pwd-base"
+                layout="row"
+                layout-align="start center">
+                <span class="material-icons"
+                  style="margin-right: 8px;">
+                  folder_open
+                </span>
+                <h1>{{ $w.location.dirname }}</h1>
+              </div>
+              <md-checkbox ng-model="$w.showHidden" aria-label="Show Hidden">
+                Show Hidden
+              </md-checkbox>
+            </header>
+            <section style="overflow-y: scroll;overflow-x: hidden;"
+              flex>
+              <md-list>
+                <md-list-item ng-class="{'hidden-obj': $item.isHidden}"
+                  ng-if="!$item.isHidden || $w.showHidden"
+                  ng-repeat="$item in $w.location.contents"
+                  ng-click="$w.handleClick($item, $event)">
+                  {{ $item.basename }}
+                  <span ng-if="$item.info[0] === 'd'">/</span>
+                </md-list-item>
+              </md-list>
+            </section>
+          </md-content>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script type="application/javascript"

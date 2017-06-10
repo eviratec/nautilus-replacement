@@ -18,6 +18,7 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: "Ubuntu";
 }
 
 #appRoot md-toolbar md-input-container.md-toolbar-theme {
@@ -56,4 +57,16 @@ body {
 
 #appRoot md-content header h1 {
   margin: 0;
+  font-weight: 300;
+  color: rgba(0,0,0,0.57);
+}
+
+#appRoot md-content header md-checkbox {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+#appRoot md-content section md-list-item.hidden-obj {
+  color: rgba(0,0,0,0.38);
 }
