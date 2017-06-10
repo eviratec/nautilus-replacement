@@ -14,6 +14,8 @@
     src="bower_components/angular-messages/angular-messages.min.js"></script>
   <script type="application/javascript"
     src="bower_components/angular-material/angular-material.min.js"></script>
+  <script type="application/javascript"
+    src="node_modules/angular-filesize-filter/angular-filesize-filter.js"></script>
 
   <link rel="stylesheet"
     href="bower_components/material-design-icons/iconfont/material-icons.css">
@@ -171,11 +173,21 @@
                   ng-if="!$last && ( !$item.isHidden || $w.showHidden )"
                   ng-repeat="$item in $w.location.contents | orderBy:'type'"
                   ng-click="$w.handleClick($item, $event)">
+                  <span class="inset">
+                    <md-icon class="material-icons"
+                      ng-if="$w.isDirectory($item)">
+                      folder
+                    </md-icon>
+                    <md-icon class="material-icons"
+                      ng-if="!$w.isDirectory($item)">
+
+                    </md-icon>
+                  </span>
                   {{ $item.basename }}
                   <span ng-if="$item.info[0] === 'd'">/</span>
                   <span flex></span>
                   <span class="obj-size md-caption">
-                    {{ $item.size }}
+                    {{ $item.size | filesize }}
                   </span>
                 </md-list-item>
               </md-list>

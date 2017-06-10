@@ -27,6 +27,7 @@
     "ngAria",
     "ngMaterial",
     "ngMessages",
+    "ngFilesizeFilter",
   ]);
 
   app.config(function($mdThemingProvider) {
@@ -207,7 +208,7 @@
     function readdir (path) {
       // return fs.readdirSync(path);
       return new Promise((resolve, reject) => {
-        child_process.exec(`ls -alh`, {cwd: path}, function (err, res) {
+        child_process.exec(`ls -al`, {cwd: path}, function (err, res) {
           resolve(new NavigationList(path, res.split(/\n/g).slice(2)));
         });
       });
