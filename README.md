@@ -9,7 +9,28 @@ For [Ubuntu](https://www.ubuntu.com/).
 ## Dev requirements
 
 - [Node.js](https://www.nodejs.org) v8.0.0
-- [nw.js](https://nwjs.io/) v0.23.1-SDK
+- [nw.js](https://nwjs.io/) [v0.23.1-SDK](https://nwjs.io/downloads/)
+
+## Dev setup
+
+1. Install NPM dependencies
+```shell
+$ npm install
+```
+2. Install Bower dependencies
+```shell
+$ ./node_modules/bower/bin/bower install
+```
+3. Obtain [nw.js](https://nwjs.io/) [v0.23.1-SDK](https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz)
+```shell
+$ cd ~/Downloads
+$ wget https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz
+$ tar -xf nwjs-sdk-v0.23.1-linux-x64.tar.gz
+```
+4. Fire it up!
+```shell
+$ ~/Downloads/nwjs-sdk-v0.23.1-linux-x64/nw .
+```
 
 ## License
 
