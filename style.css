@@ -61,7 +61,7 @@ body {
   color: rgba(0,0,0,0.57);
 }
 
-#appRoot md-content header md-checkbox {
+#appRoot md-content header .quick-actions {
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -89,4 +89,24 @@ body {
   overflow-x: hidden;
   background-color: #01579b;
   color: rgba(255,255,255,0.7);
+}
+
+md-menu-content md-menu-item button.md-button md-checkbox {
+  margin: 0;
+}
+
+md-menu-content md-menu-item button.md-button md-checkbox div.md-label {
+  margin-left: 43px;
+}
+
+md-menu-content md-menu-item button.md-button md-checkbox div.md-container {
+  margin-left: 2px;
+}
+
+md-content md-list-item._md-button-wrap {
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+div.sidebar md-list-item._md-button-wrap {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }

@@ -53,7 +53,7 @@
             <md-menu-item>
               <md-button ng-click="$w.handleClick($item, $event)">
                 <md-icon class="material-icons">
-
+                  web_asset
                 </md-icon>
                 New window
               </md-button>
@@ -66,6 +66,15 @@
                 Search
               </md-button>
             </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button>
+                <md-checkbox ng-model="$w.showHidden" aria-label="Show Hidden">
+                  Show hidden
+                </md-checkbox>
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
             <md-menu-item>
               <md-button ng-click="$w.manageSettings($event)">
                 <md-icon class="material-icons">
@@ -74,7 +83,6 @@
                 Settings
               </md-button>
             </md-menu-item>
-            <md-divider></md-divider>
             <md-menu-item>
               <md-button ng-click="$w.handleClick($item, $event)">
                 <md-icon class="material-icons">
@@ -83,7 +91,6 @@
                 About
               </md-button>
             </md-menu-item>
-            <md-divider></md-divider>
             <md-menu-item>
               <md-button ng-click="$w.handleClick($item, $event)">
                 <md-icon class="material-icons">
@@ -160,11 +167,38 @@
                 </span>
                 <h1>{{ $w.location.dirname }}</h1>
               </div>
-              <md-checkbox ng-model="$w.showHidden" aria-label="Show Hidden">
-                <md-icon class="material-icons">
-                  visibility
-                </md-icon>
-              </md-checkbox>
+              <div class="quick-actions">
+                <md-menu md-offset="24 48">
+                  <md-button class="md-accent"
+                    ng-click="$w.openMenu($mdMenu, $event)">
+                    <md-icon class="material-icons">
+                      create
+                    </md-icon>
+                    Create
+                    <md-icon class="material-icons">
+                      arrow_drop_down
+                    </md-icon>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item>
+                      <md-button ng-click="$w.handleClick($item, $event)">
+                        <md-icon class="material-icons">
+                          add
+                        </md-icon>
+                        New file
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ng-click="$w.startSearch($event)">
+                        <md-icon class="material-icons">
+                          create_new_folder
+                        </md-icon>
+                        New folder
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
             </header>
             <section style="overflow-y: scroll;overflow-x: hidden;"
               flex>
