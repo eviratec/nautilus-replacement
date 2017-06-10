@@ -121,15 +121,17 @@
                 <h1>{{ $w.location.dirname }}</h1>
               </div>
               <md-checkbox ng-model="$w.showHidden" aria-label="Show Hidden">
-                Show Hidden
+                <md-icon class="material-icons">
+                  visibility
+                </md-icon>
               </md-checkbox>
             </header>
             <section style="overflow-y: scroll;overflow-x: hidden;"
               flex>
               <md-list>
-                <md-list-item ng-class="{'hidden-obj': $item.isHidden}"
-                  ng-if="!$item.isHidden || $w.showHidden"
-                  ng-repeat="$item in $w.location.contents"
+                <md-list-item ng-class="{'hidden-obj': $item.isHidden, 'dir-obj': $w.isDirectory($item)}"
+                  ng-if="!$last && ( !$item.isHidden || $w.showHidden )"
+                  ng-repeat="$item in $w.location.contents | orderBy:'type'"
                   ng-click="$w.handleClick($item, $event)">
                   {{ $item.basename }}
                   <span ng-if="$item.info[0] === 'd'">/</span>

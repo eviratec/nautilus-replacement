@@ -70,3 +70,7 @@ body {
 #appRoot md-content section md-list-item.hidden-obj {
   color: rgba(0,0,0,0.38);
 }
+
+#appRoot md-content section md-list-item.dir-obj {
+  font-family: "Ubuntu Light";
+}

@@ -79,8 +79,12 @@
   function FileFactory (FileSystemObject) {
 
     class File extends FileSystemObject {
+      static is (obj) {
+        return obj instanceof File;
+      }
       constructor (parentUri, info) {
         super(...arguments);
+        this.type = "application/octet-stream";
       }
     }
 
@@ -94,8 +98,12 @@
   function DirectoryFactory (FileSystemObject) {
 
     class Directory extends FileSystemObject {
+      static is (obj) {
+        return obj instanceof Directory;
+      }
       constructor (parentUri, info) {
         super(...arguments);
+        this.type = "_DIRECTORY";
       }
     }
 
@@ -150,6 +158,7 @@
 
     this.favourites = {
       contents: [
+        new Directory(process.env.HOME, "d Desktop"),
         new Directory(process.env.HOME, "d Documents"),
         new Directory(process.env.HOME, "d Downloads"),
         new Directory(process.env.HOME, "d Music"),
@@ -158,6 +167,10 @@
         new Directory(process.env.HOME, "d Videos"),
       ],
     };
+
+    this.isDirectory = function (directory) {
+      return Directory.is(directory);
+    }
 
     this.handleClick = function ($item, $event) {
       let pathStr = path.resolve($item.uri);
