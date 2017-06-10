@@ -40,7 +40,7 @@
         <md-input-container flex>
           <input ng-model="$w.location.str" />
         </md-input-container>
-        <md-menu>
+        <md-menu md-offset="0 48">
           <md-button class="md-icon-button"
             ng-click="$w.openMenu($mdMenu, $event)">
             <span class="material-icons">
@@ -49,9 +49,45 @@
           </md-button>
           <md-menu-content width="4">
             <md-menu-item>
-              <md-button ng-click="ctrl.redial($event)">
-                <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-                Redial
+              <md-button ng-click="$w.handleClick($item, $event)">
+                <md-icon class="material-icons">
+
+                </md-icon>
+                New window
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="$w.startSearch($event)">
+                <md-icon class="material-icons">
+                  search
+                </md-icon>
+                Search
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="$w.manageSettings($event)">
+                <md-icon class="material-icons">
+                  settings
+                </md-icon>
+                Settings
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button ng-click="$w.handleClick($item, $event)">
+                <md-icon class="material-icons">
+                  info_outline
+                </md-icon>
+                About
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button ng-click="$w.handleClick($item, $event)">
+                <md-icon class="material-icons">
+                  close
+                </md-icon>
+                Close window
               </md-button>
             </md-menu-item>
           </md-menu-content>
@@ -62,7 +98,7 @@
     <div flex>
       <div layout="row"
         layout-fill>
-        <div style="width:300px;overflow-y: scroll;overflow-x:hidden;border-right: 1px solid rgba(0,0,0,0.12);">
+        <div class="sidebar">
           <section layout="column">
             <md-subheader class="md-primary">
               Favourites
@@ -81,6 +117,8 @@
         <div flex
           layout>
           <md-content layout="column"
+            style="z-index:10;"
+            md-whiteframe="2dp"
             flex>
             <header>
               <div class="pwd-breadcrumbs md-caption"
@@ -135,6 +173,10 @@
                   ng-click="$w.handleClick($item, $event)">
                   {{ $item.basename }}
                   <span ng-if="$item.info[0] === 'd'">/</span>
+                  <span flex></span>
+                  <span class="obj-size md-caption">
+                    {{ $item.size }}
+                  </span>
                 </md-list-item>
               </md-list>
             </section>

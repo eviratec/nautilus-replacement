@@ -63,6 +63,9 @@
       get basename () {
         return this.info.split(/\s+/g).slice(-1)[0];
       }
+      get size () {
+        return this.info.split(/\s+/g)[4];
+      }
       get isHidden () {
         let baseStartsWithDot = "." === this.info.split(/\s/g).slice(-1)[0][0];
         return baseStartsWithDot;
@@ -182,7 +185,6 @@
     };
 
     this.openMenu = function ($mdMenu, $event) {
-      originatorEv = $event;
       $mdMenu.open($event);
     };
 

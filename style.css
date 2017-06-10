@@ -74,3 +74,19 @@ body {
 #appRoot md-content section md-list-item.dir-obj {
   font-family: "Ubuntu Light";
 }
+
+#appRoot md-content section md-list-item .obj-size {
+  color: rgba(0,0,0,0.38);
+}
+
+#appRoot div.sidebar .md-subheader .md-subheader-inner {
+  color: rgba(255,255,255,0.7);
+  background-color: #0091ea;
+}
+
+#appRoot div.sidebar {
+  width: 300px;
+  overflow-x: hidden;
+  background-color: #01579b;
+  color: rgba(255,255,255,0.7);
+}
