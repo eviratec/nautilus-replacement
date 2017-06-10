@@ -174,18 +174,18 @@
                     <md-icon class="material-icons">
                       create
                     </md-icon>
-                    Create
+                    Create new
                     <md-icon class="material-icons">
                       arrow_drop_down
                     </md-icon>
                   </md-button>
-                  <md-menu-content width="4">
+                  <md-menu-content width="3">
                     <md-menu-item>
                       <md-button ng-click="$w.handleClick($item, $event)">
                         <md-icon class="material-icons">
                           add
                         </md-icon>
-                        New file
+                        File
                       </md-button>
                     </md-menu-item>
                     <md-menu-item>
@@ -193,7 +193,15 @@
                         <md-icon class="material-icons">
                           create_new_folder
                         </md-icon>
-                        New folder
+                        Folder
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ng-click="$w.startSearch($event)">
+                        <md-icon class="material-icons">
+                          link
+                        </md-icon>
+                        Link
                       </md-button>
                     </md-menu-item>
                   </md-menu-content>
@@ -225,6 +233,58 @@
                   </span>
                 </md-list-item>
               </md-list>
+              <div class="lock-size"
+                layout="row"
+                layout-align="center center">
+                <md-fab-speed-dial md-open="$w.fabSpeedDialOpen"
+                  md-direction="up"
+                  class="md-fling"
+                  ng-mouseenter="$w.fabSpeedDialOpen=true"
+                  ng-mouseleave="$w.fabSpeedDialOpen=false">
+                  <md-fab-trigger>
+                    <md-button aria-label="menu"
+                      class="md-fab md-accent">
+                      <md-tooltip md-direction="left">
+                        Create new ...
+                      </md-tooltip>
+                      <md-icon class="material-icons">
+                        create
+                      </md-icon>
+                    </md-button>
+                  </md-fab-trigger>
+
+                  <md-fab-actions>
+                    <md-button aria-label="Create new file"
+                      class="md-fab md-raised md-mini">
+                      <md-tooltip md-direction="left">
+                        File
+                      </md-tooltip>
+                      <md-icon class="material-icons">
+                        add
+                      </md-icon>
+                    </md-button>
+                    <md-button aria-label="Create new folder"
+                      class="md-fab md-raised md-mini">
+                      <md-tooltip md-direction="left">
+                        Folder
+                      </md-tooltip>
+                      <md-icon class="material-icons">
+                        create_new_folder
+                      </md-icon>
+                    </md-button>
+                    <md-button aria-label="Create new link"
+                      class="md-fab md-raised md-mini">
+                      <md-tooltip md-direction="left">
+                        Link
+                      </md-tooltip>
+                      <md-icon class="material-icons">
+                        link
+                      </md-icon>
+                    </md-button>
+                  </md-fab-actions>
+                </md-fab-speed-dial>
+              </div>
+
             </section>
           </md-content>
         </div>

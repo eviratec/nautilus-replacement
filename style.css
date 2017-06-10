@@ -15,6 +15,11 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+html,
+body {
+  font-size: 16.6px 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -89,6 +94,18 @@ body {
   overflow-x: hidden;
   background-color: #01579b;
   color: rgba(255,255,255,0.7);
+}
+
+#appRoot .lock-size {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+#appRoot md-content section md-list {
+    margin-bottom: 72px;
 }
 
 md-menu-content md-menu-item button.md-button md-checkbox {

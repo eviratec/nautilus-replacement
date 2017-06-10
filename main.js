@@ -145,6 +145,8 @@
     var $w = this;
 
     this.showHidden = false;
+    this.fabSpeedDialOpen = false;
+    this.tooltipVisible = true;
 
     this.info = {
       nodeVersion: process.version,
