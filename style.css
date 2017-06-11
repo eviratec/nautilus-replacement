@@ -26,6 +26,19 @@ body {
   font-family: "Ubuntu";
 }
 
+section#searchRoot md-icon.material-icons {
+  margin-right: 24px;
+}
+
+section#searchRoot header {
+  padding: 16px 24px 0px;
+}
+
+section#searchRoot md-tab-content,
+section#searchRoot md-tab-content md-content {
+  background-color: #fff;
+}
+
 section#aboutRoot md-tab-content,
 section#aboutRoot md-tab-content md-content {
   background-color: #e3e3e3;

@@ -161,6 +161,12 @@
       });
     };
 
+    this.showSearch = function ($event) {
+      nwWindow.open("search.html", {}, newWindow => {
+
+      });
+    };
+
     this.info = {
       nodeVersion: process.version,
     };
