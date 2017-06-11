@@ -44,6 +44,7 @@
 
     // Get the current window
     var win = nw.Window.get();
+    win.icon = "./icon.png";
     win.resizeTo(1000, 600);
 
   });

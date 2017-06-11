@@ -27,6 +27,7 @@
 
   app.config(function() {
     var win = nw.Window.get();
+    win.icon = "icon.png";
     win.resizeTo(600, 500);
     win.focus();
   });

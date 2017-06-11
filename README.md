@@ -37,6 +37,10 @@ $ ./node_modules/bower/bin/bower install
 $ ~/Downloads/nwjs-sdk-v0.23.1-linux-x64/nw .
 ```
 
+## Dev tips and documentation
+
+- Official nw.js documentation: [docs.nwjs.io](http://docs.nwjs.io/en/latest/)
+
 ## License
 
 By [Eviratec Software](https://www.eviratec.com.au)

@@ -23,7 +23,7 @@ body {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu Mono", monospace;
 }
 
 section#searchRoot md-icon.material-icons {
@@ -47,7 +47,7 @@ section#searchRoot md-tabs-wrapper {
 }
 
 section#searchRoot header h1 {
-  font-family: "Ubuntu Light";
+  font-family: "Ubuntu Mono", monospace;
   font-weight: 400;
 }
 
@@ -74,6 +74,7 @@ section#aboutRoot md-tabs-canvas {
 }
 
 #appRoot md-toolbar md-input-container.md-toolbar-theme .md-input {
+  font-family: "Ubuntu Mono", monospace;
   color: rgba(255,255,255,0.7);
   border-color: rgba(255,255,255,0);
   padding: 0px 8px;
@@ -101,13 +102,16 @@ section#aboutRoot md-tabs-canvas {
   padding: 24px;
   border-bottom: 1px solid rgba(0,0,0,0.12);
   position: relative;
-  background-color: rgba(0,0,0,0.1);
 }
 
 #appRoot md-content header h1 {
   margin: 0;
   font-weight: 300;
   color: rgba(0,0,0,0.57);
+}
+
+#appRoot md-content header .md-button {
+  font-family: "Ubuntu Mono", monospace;
 }
 
 #appRoot md-content header .quick-actions {
@@ -121,7 +125,7 @@ section#aboutRoot md-tabs-canvas {
 }
 
 #appRoot md-content section md-list-item.dir-obj {
-  font-family: "Ubuntu Light";
+  font-family: "Ubuntu Mono", monospace;
 }
 
 #appRoot md-content section md-list-item .obj-size {
@@ -136,7 +140,7 @@ section#aboutRoot md-tabs-canvas {
 #appRoot div.sidebar {
   width: 300px;
   overflow-x: hidden;
-  background-color: #01579b;
+  background-color: #242424;
   color: rgba(255,255,255,0.7);
 }
 
