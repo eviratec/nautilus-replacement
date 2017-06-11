@@ -1,17 +1,8 @@
 [Desktop Entry]
-NotShowIn=Unity;
-Name=Files
-Comment=Access and organize files
-Keywords=folder;manager;explore;disk;filesystem;
-Exec=nautilus-replacement --new-window %U
-Icon=software.eviratec.nautilus-replacement
-Terminal=false
+Encoding=UTF-8
 Type=Application
-StartupNotify=true
-Categories=Utility;FileManager;
-Actions=new-window;
-X-Unity-IconBackgroundColor=#af4853
 
-[Desktop Action new-window]
-Name=New Window
-Exec=nautilus-replacement --new-window
+Exec=nautilus-replacement
+Icon=nautilus-replacement
+
+Name=Nautilus Replacement

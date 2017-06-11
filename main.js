@@ -28,6 +28,7 @@
     "ngMaterial",
     "ngMessages",
     "ngFilesizeFilter",
+    "ui.ace",
   ]);
 
   app.config(function($mdThemingProvider) {
@@ -44,7 +45,7 @@
 
     // Get the current window
     var win = nw.Window.get();
-    win.icon = "./icon.png";
+    win.icon = path.resolve("./icon.png");
     win.resizeTo(1000, 600);
 
   });
@@ -155,6 +156,47 @@
     this.showHidden = false;
     this.fabSpeedDialOpen = false;
     this.tooltipVisible = true;
+    this.showEditor = false;
+    this.editorContent = "";
+
+    this.aceEditor = null;
+    this.aceSession = null;
+
+    this.aceConfig = {
+      showGutter: true,
+      onLoad: function aceLoaded (_editor) {
+
+        let _session;
+        let _renderer;
+
+        $w.aceEditor = _editor;
+        _session = $w.aceSession = _editor.getSession();
+        _renderer = _editor.renderer;
+
+        $w.aceEditor.setValue($w.editorContent);
+        _editor.gotoLine(1);
+
+        if (currentPath().slice(-1)[0].match(/\.js$/)) {
+          _session.setMode("ace/mode/javascript");
+        }
+
+        // Options
+        // _editor.setReadOnly(true);
+        _session.setUndoManager(new ace.UndoManager());
+        _session.setTabSize(2);
+        _renderer.setShowGutter(true);
+
+        // Events
+        _editor.on("changeSession", function(){
+
+        });
+        _session.on("change", function(){
+
+        });
+      },
+    };
+
+
 
     this.goHome = function ($event) {
       openDir(process.env.HOME);
@@ -241,11 +283,21 @@
       var contents;
       $w.location.contents.splice(0);
       readdir(currentPath())
-        .then((r) => {
+        .then(r => {
           $timeout(function () {
+            $w.showEditor = false;
             r.contents.forEach(item => {
               $w.location.contents.push(item);
             });
+          });
+        })
+        .catch(err => {
+          $timeout(function () {
+            $w.showEditor = true;
+            $w.editorContent = fs.readFileSync(currentPath(), "utf-8");
+            $w.aceEditor &&
+              $w.aceEditor.setValue($w.editorContent) &&
+              $w.aceEditor.resize();
           });
         });
     }

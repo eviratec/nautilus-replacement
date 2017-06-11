@@ -4,18 +4,22 @@
 
   <title>Nautilus Replacement</title>
 
-  <script type="application/javascript"
+  <script type="text/javascript"
+    src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+  <script type="text/javascript"
     src="bower_components/angular/angular.min.js"></script>
-  <script type="application/javascript"
+  <script type="text/javascript"
     src="bower_components/angular-aria/angular-aria.min.js"></script>
-  <script type="application/javascript"
+  <script type="text/javascript"
     src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <script type="application/javascript"
+  <script type="text/javascript"
     src="bower_components/angular-messages/angular-messages.min.js"></script>
-  <script type="application/javascript"
+  <script type="text/javascript"
     src="bower_components/angular-material/angular-material.min.js"></script>
-  <script type="application/javascript"
+  <script type="text/javascript"
     src="node_modules/angular-filesize-filter/angular-filesize-filter.js"></script>
+  <script type="text/javascript"
+    src="bower_components/angular-ui-ace/ui-ace.js"></script>
 
   <link rel="stylesheet"
     href="bower_components/material-design-icons/iconfont/material-icons.css">
@@ -218,6 +222,14 @@
               </div>
             </header>
             <section style="overflow-y: scroll;overflow-x: hidden;"
+              ng-if="$w.showEditor"
+              flex>
+              <div ui-ace="$w.aceConfig"
+                style="font-size:16.6px;"
+                layout-fill></div>
+            </section>
+            <section style="overflow-y: scroll;overflow-x: hidden;"
+              ng-if="!$w.showEditor"
               flex>
               <md-list>
                 <md-list-item ng-class="{'hidden-obj': $item.isHidden, 'dir-obj': $w.isDirectory($item)}"
