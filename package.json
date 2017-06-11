@@ -8,15 +8,15 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm ln -s"
+    "postinstall": "bower install && npm ln -s"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bower": "1.8.0",
     "nw-builder": "3.4.1"
   },
   "dependencies": {
+    "bower": "1.8.0",
     "nw": "0.23.1",
     "angular-filesize-filter": "0.1.2"
   }
