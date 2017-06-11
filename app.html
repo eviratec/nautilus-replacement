@@ -30,6 +30,7 @@
   <div id="appRoot"
     ng-controller="WindowController as $w"
     layout="column"
+    ng-cloak
     layout-fill>
 
     <md-toolbar md-theme="toolbar">
@@ -69,14 +70,15 @@
             <md-divider></md-divider>
             <md-menu-item>
               <md-button>
-                <md-checkbox ng-model="$w.showHidden" aria-label="Show Hidden">
+                <md-checkbox ng-model="$w.showHidden"
+                  aria-label="Show Hidden">
                   Show hidden
                 </md-checkbox>
               </md-button>
             </md-menu-item>
             <md-divider></md-divider>
             <md-menu-item>
-              <md-button ng-click="$w.manageSettings($event)">
+              <md-button ng-click="$w.showSettings($event)">
                 <md-icon class="material-icons">
                   settings
                 </md-icon>

@@ -171,6 +171,12 @@
       });
     };
 
+    this.showSettings = function ($event) {
+      nwWindow.open("settings.html", {}, newWindow => {
+
+      });
+    };
+
     this.showSearch = function ($event) {
       nwWindow.open("search.html", {}, newWindow => {
 
