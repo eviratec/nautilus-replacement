@@ -26,40 +26,100 @@
 <body ng-app="searchModule">
 
   <section id="searchRoot"
+    ng-controller="SearchRootController as $search"
     layout="column"
     layout-fill>
-    <header ng-controller="SearchHeaderController as $header"
-      md-whiteframe="2dp">
-      <h1 layout="row"
-        layout-align="start center">
-        <md-icon class="material-icons">
-          search
-        </md-icon>
+    <md-toolbar md-theme="toolbar" class="md-accent">
+      <div class="md-toolbar-tools" layout="row">
+        <md-button class="md-icon-button">
+          <span class="material-icons">
+            search
+          </span>
+        </md-button>
         <md-autocomplete flex
           md-clear-button="true"
-          ng-disabled="$header.searchInput.isDisabled"
-          md-no-cache="$header.searchInput.noCache"
-          md-selected-item="$header.searchInput.selectedItem"
-          md-search-text-change="$header.searchInput.searchTextChange($header.searchInput.searchText)"
-          md-search-text="$header.searchInput.searchText"
-          md-selected-item-change="$header.searchInput.selectedItemChange(item)"
-          md-items="item in $header.searchInput.querySearch($header.searchInput.searchText)"
+          ng-disabled="$search.searchInput.isDisabled"
+          md-no-cache="$search.searchInput.noCache"
+          md-selected-item="$search.searchInput.selectedItem"
+          md-search-text-change="$search.searchInput.searchTextChange($search.searchInput.searchText)"
+          md-search-text="$search.searchInput.searchText"
+          md-selected-item-change="$search.searchInput.selectedItemChange(item)"
+          md-items="item in $search.searchInput.querySearch($search.searchInput.searchText)"
           md-item-text="item.display"
           md-min-length="3"
-          placeholder="Enter search term ...">
+          placeholder="Enter keywords or phrase ...">
           <md-item-template>
-            <span md-highlight-text="$header.searchInput.searchText" md-highlight-flags="^i">{{item.display}}</span>
+            <span md-highlight-text="$search.searchInput.searchText" md-highlight-flags="^i">{{item.display}}</span>
           </md-item-template>
           <md-not-found>
-            No previous searches matching "{{$header.searchInput.searchText}}" were found.
-            <a ng-click="$header.searchInput.newState($header.searchInput.searchText)">Create a new one!</a>
+            No previous searches matching "{{$search.searchInput.searchText}}" were found.
+            <a ng-click="$search.searchInput.newState($search.searchInput.searchText)">Create a new one!</a>
           </md-not-found>
         </md-autocomplete>
-      </h1>
-    </header>
+        <md-menu md-offset="0 48">
+          <md-button class="md-icon-button"
+            ng-click="openMenu($mdMenu, $event)">
+            <span class="material-icons">
+              menu
+            </span>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="handleClick($item, $event)">
+                <md-icon class="material-icons">
+                  web_asset
+                </md-icon>
+                New window
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="showSearch($event)">
+                <md-icon class="material-icons">
+                  search
+                </md-icon>
+                Search
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button>
+                <md-checkbox ng-model="showHidden" aria-label="Show Hidden">
+                  Show hidden
+                </md-checkbox>
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button ng-click="manageSettings($event)">
+                <md-icon class="material-icons">
+                  settings
+                </md-icon>
+                Settings
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="showAbout($event)">
+                <md-icon class="material-icons">
+                  info_outline
+                </md-icon>
+                About
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="handleClick($item, $event)">
+                <md-icon class="material-icons">
+                  close
+                </md-icon>
+                Close window
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-toolbar>
     <md-content layout
       flex>
-      <md-tabs layout-fill>
+      <md-tabs class="md-accent" layout-fill>
         <md-tab label="Results">
           <md-content class="md-padding">
             Results

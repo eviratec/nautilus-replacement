@@ -155,6 +155,12 @@
     this.fabSpeedDialOpen = false;
     this.tooltipVisible = true;
 
+    this.newWindow = function ($event) {
+      nwWindow.open("app.html", {}, newWindow => {
+
+      });
+    };
+
     this.showAbout = function ($event) {
       nwWindow.open("about.html", {}, newWindow => {
 

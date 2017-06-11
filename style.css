@@ -30,13 +30,25 @@ section#searchRoot md-icon.material-icons {
   margin-right: 24px;
 }
 
-section#searchRoot header {
-  padding: 16px 24px 0px;
-}
-
 section#searchRoot md-tab-content,
 section#searchRoot md-tab-content md-content {
   background-color: #fff;
+}
+
+section#searchRoot md-tabs {
+  border-radius: 0;
+}
+
+section#searchRoot md-tabs-wrapper {
+  z-index: 1;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),
+    0 2px 2px 0 rgba(0,0,0,.14),
+    0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+section#searchRoot header h1 {
+  font-family: "Ubuntu Light";
+  font-weight: 400;
 }
 
 section#aboutRoot md-tab-content,

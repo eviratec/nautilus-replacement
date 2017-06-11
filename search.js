@@ -28,12 +28,13 @@
   app.config(function() {
     var win = nw.Window.get();
     win.resizeTo(600, 500);
+    win.focus();
   });
 
-  app.controller("SearchHeaderController", SearchHeaderController);
+  app.controller("SearchRootController", SearchRootController);
 
-  SearchHeaderController.$inject = [];
-  function SearchHeaderController () {
+  SearchRootController.$inject = [];
+  function SearchRootController () {
 
     this.searchInput = {
       searchText: "",
