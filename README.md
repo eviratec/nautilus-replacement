@@ -6,6 +6,18 @@ For [Ubuntu](https://www.ubuntu.com/).
 
 ![alt text](https://github.com/eviratec/nautilus-replacement/raw/master/screenshot.png "Screenshot")
 
+## User requirements
+
+- [npm](https://www.npmjs.com)
+
+## User setup
+
+Install via NPM
+```shell
+$ npm install -g nautilus-replacement
+$ nautilus-replacement
+```
+
 ## Dev requirements
 
 - [Node.js](https://www.nodejs.org) v8.0.0

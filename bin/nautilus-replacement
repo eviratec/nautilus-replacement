@@ -16,4 +16,4 @@ echo " * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR"
 echo " * PERFORMANCE OF THIS SOFTWARE."
 echo " */\n"
 
-nw ../
+../node_modules/nw/bin/nw ../
