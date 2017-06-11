@@ -1,6 +1,6 @@
 {
   "name": "nautilus-replacement",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "app.html",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install && npm ln -s"
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "ISC",
