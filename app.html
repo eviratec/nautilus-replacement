@@ -116,6 +116,12 @@
               Favourites
             </md-subheader>
             <md-list>
+              <md-list-item ng-click="$w.goHome($event)">
+                <span class="inset material-icons">
+                  home
+                </span>
+                Home
+              </md-list-item>
               <md-list-item ng-repeat="$item in $w.favourites.contents"
                 ng-click="$w.handleClick($item, $event)">
                 <span class="inset material-icons">

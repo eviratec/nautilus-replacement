@@ -156,6 +156,10 @@
     this.fabSpeedDialOpen = false;
     this.tooltipVisible = true;
 
+    this.goHome = function ($event) {
+      openDir(process.env.HOME);
+    };
+
     this.closeWindow = function ($event) {
       nwWindow.get().close();
     };
@@ -219,16 +223,19 @@
       if (pathStr !== $w.locationHistory[0]) {
         $w.locationHistory.unshift(pathStr);
       }
-      setLoc(pathStr);
-      reloadContents();
+      openDir(pathStr);
     };
 
     this.openMenu = function ($mdMenu, $event) {
       $mdMenu.open($event);
     };
 
-    setLoc(process.env.HOME);
-    reloadContents();
+    openDir(process.env.HOME);
+
+    function openDir (fullpath) {
+      setLoc(fullpath);
+      reloadContents();
+    }
 
     function reloadContents () {
       var contents;
