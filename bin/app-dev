@@ -16,3 +16,8 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 "use strict";
+
+const path = require("path");
+const spawn = require("child_process").spawn;
+
+spawn("nw", ["."], { cwd: path.resolve("./") });
