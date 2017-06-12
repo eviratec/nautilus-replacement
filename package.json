@@ -1,7 +1,7 @@
 {
   "name": "nautilus-replacement",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.5",
+  "description": "Replacement for the default file browser in Ubuntu.",
   "main": "app.html",
   "bin": {
     "nautilus-replacement": "./bin/nautilus-replacement"
@@ -10,8 +10,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
   },
-  "author": "",
+  "author": "Callan Peter Milne <callan.milne@eviratec.com.au>",
   "license": "ISC",
+  "repository": {
+    "url": "eviratec/nautilus-replacement",
+    "type": "git"
+  },
   "devDependencies": {
     "nw-builder": "3.4.1"
   },
