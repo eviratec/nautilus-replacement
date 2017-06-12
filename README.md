@@ -2,35 +2,45 @@
 
 For [Ubuntu](https://www.ubuntu.com/).
 
-## Screenshot
+## Getting started (for users)
 
-![alt text](https://github.com/eviratec/nautilus-replacement/raw/master/screenshot.png "Screenshot")
+### Requirements
 
-## User requirements
-
+- [Ubuntu](https://www.ubuntu.com)
 - [npm](https://www.npmjs.com)
 
-## User setup
+### Install it
 
 Install via NPM
 ```shell
 $ npm install -g nautilus-replacement
+```
+
+### Start it
+
+```shell
 $ nautilus-replacement
 ```
 
-## Dev requirements
+## Screenshot
+
+![alt text](https://github.com/eviratec/nautilus-replacement/raw/master/screenshot.png "Screenshot")
+
+## Development
+
+### Requirements
 
 - [Node.js](https://www.nodejs.org) v8.0.0
 - [nw.js](https://nwjs.io/) [v0.23.1-SDK](https://nwjs.io/downloads/)
 
-## Dev setup
+### Set-up
 
-1. Obtain [nw.js](https://nwjs.io/) [v0.23.1-SDK](https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz)
+1. Obtain [nw.js](https://nwjs.io/) v0.23.1-**SDK**
 ```shell
 $ cd ~/Downloads
 $ wget -nc -O - https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz | tar xvz
 ```
-2. Fetch the project source
+2. Fetch the *nautilus-replacement* (this) project source
 ```shell
 $ cd ~/Downloads
 $ wget -nc -O - https://github.com/eviratec/nautilus-replacement/archive/master.tar.gz | tar xvz
@@ -40,18 +50,23 @@ $ cd nautilus-replacement-master
 ```shell
 $ npm install
 ```
-4. Install Bower dependencies
-```shell
-$ ./node_modules/bower/bin/bower install
-```
-5. Fire it up!
+4. Fire it up!
 ```shell
 $ ~/Downloads/nwjs-sdk-v0.23.1-linux-x64/nw .
 ```
 
-## Dev tips and documentation
+### Tips and documentation
 
-- Official nw.js documentation: [docs.nwjs.io](http://docs.nwjs.io/en/latest/)
+- Official [Angular.js v1.x](https://angularjs.org/) documentation:
+  - [AngularJS: API Reference](https://docs.angularjs.org/api)
+  - [AngularJS: Developer Guide](https://docs.angularjs.org/guide)
+  - [AngularJS Material: Latest](https://material.angularjs.org/latest/)
+- Official [ace editor](https://ace.c9.io/) documentation:
+  - [Ace: API Reference](https://ace.c9.io/#howto=&nav=api)
+  - [Ace: How-To Guide](https://ace.c9.io/#howto=&nav=howto)
+  - [Ace: Syntax Highlighters](https://ace.c9.io/#howto=&nav=higlighter)
+- Official [nw.js](https://nwjs.io/) documentation:
+  - [nw.js: Latest](http://docs.nwjs.io/en/latest/)
 
 ## License
 
