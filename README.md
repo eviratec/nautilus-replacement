@@ -12,9 +12,9 @@ For [Ubuntu](https://www.ubuntu.com/).
 ### Install it
 
 Install via NPM
-```shell
-$ npm install -g nautilus-replacement
-```
+  ```shell
+  $ npm install -g nautilus-replacement
+  ```
 
 ### Start it
 
@@ -36,24 +36,24 @@ $ nautilus-replacement
 ### Set-up
 
 1. Obtain [nw.js](https://nwjs.io/) v0.23.1-**SDK**
-```shell
-$ cd ~/Downloads
-$ wget -nc -O - https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz | tar xvz
-```
-2. Fetch the *nautilus-replacement* (this) project source
-```shell
-$ cd ~/Downloads
-$ wget -nc -O - https://github.com/eviratec/nautilus-replacement/archive/master.tar.gz | tar xvz
-$ cd nautilus-replacement-master
-```
+  ```shell
+  $ cd ~/Downloads
+  $ wget -nc -O - https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz | tar xvz
+  ```
+2. Fetch the *nautilus-replacement* (this) project dev source
+  ```shell
+  $ cd ~/Downloads
+  $ wget -nc -O - https://github.com/eviratec/nautilus-replacement/archive/dev.tar.gz | tar xvz
+  $ cd nautilus-replacement-dev
+  ```
 3. Install NPM dependencies
-```shell
-$ npm install
-```
+  ```shell
+  $ npm install
+  ```
 4. Fire it up!
-```shell
-$ ~/Downloads/nwjs-sdk-v0.23.1-linux-x64/nw .
-```
+  ```shell
+  $ ~/Downloads/nwjs-sdk-v0.23.1-linux-x64/nw .
+  ```
 
 ### Tips and documentation
 
