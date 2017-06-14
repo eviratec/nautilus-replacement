@@ -124,7 +124,7 @@
                 <span class="inset material-icons">
                   home
                 </span>
-                Home
+                My home
               </md-list-item>
               <md-list-item ng-repeat="$item in $w.favourites.contents"
                 ng-click="$w.handleClick($item, $event)">
@@ -194,7 +194,7 @@
                   </md-button>
                   <md-menu-content width="3">
                     <md-menu-item>
-                      <md-button ng-click="$w.handleClick($item, $event)">
+                      <md-button ng-click="$w.onClickCreateFile($event)">
                         <md-icon class="material-icons">
                           add
                         </md-icon>
@@ -202,7 +202,7 @@
                       </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                      <md-button ng-click="$w.startSearch($event)">
+                      <md-button ng-click="$w.onClickCreateFolder($event)">
                         <md-icon class="material-icons">
                           create_new_folder
                         </md-icon>
@@ -210,7 +210,8 @@
                       </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                      <md-button ng-click="$w.startSearch($event)">
+                      <md-button ng-click="$w.onClickCreateLink($event)"
+                        ng-disabled="true">
                         <md-icon class="material-icons">
                           link
                         </md-icon>
@@ -242,9 +243,14 @@
                       folder
                     </md-icon>
                     <md-icon class="material-icons"
-                      ng-if="!$w.isDirectory($item)">
-
+                      ng-if="!$w.isDirectory($item)&&!$w.hasCustomIcon($item)">
+                      &nbsp;
                     </md-icon>
+                    <span class="custom-icon"
+                      ng-if="$w.hasCustomIcon($item)">
+                      <img ng-src="{{ $w.customItemIcon($item) }}"
+                        style="width:24px;height:24px;">
+                    </span>
                   </span>
                   {{ $item.basename }}
                   <span ng-if="$item.info[0] === 'd'">/</span>
@@ -276,7 +282,8 @@
 
                   <md-fab-actions>
                     <md-button aria-label="Create new file"
-                      class="md-fab md-raised md-mini">
+                      class="md-fab md-raised md-mini"
+                      ng-click="$w.onClickCreateFile($event)">
                       <md-tooltip md-direction="left">
                         File
                       </md-tooltip>
@@ -285,7 +292,8 @@
                       </md-icon>
                     </md-button>
                     <md-button aria-label="Create new folder"
-                      class="md-fab md-raised md-mini">
+                      class="md-fab md-raised md-mini"
+                      ng-click="$w.onClickCreateFolder($event)">
                       <md-tooltip md-direction="left">
                         Folder
                       </md-tooltip>
@@ -294,7 +302,9 @@
                       </md-icon>
                     </md-button>
                     <md-button aria-label="Create new link"
-                      class="md-fab md-raised md-mini">
+                      class="md-fab md-raised md-mini"
+                      ng-click="$w.onClickCreateLink($event)"
+                      ng-disabled="true">
                       <md-tooltip md-direction="left">
                         Link
                       </md-tooltip>

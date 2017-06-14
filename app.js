@@ -148,8 +148,8 @@
 
   app.controller("WindowController", WindowController);
 
-  WindowController.$inject = ["$timeout", "NavigationList", "Directory", "nwWindow"];
-  function WindowController (  $timeout,   NavigationList,   Directory,   nwWindow) {
+  WindowController.$inject = ["$timeout", "$mdDialog", "NavigationList", "Directory", "nwWindow"];
+  function WindowController (  $timeout,   $mdDialog,   NavigationList,   Directory,   nwWindow) {
 
     var $w = this;
 
@@ -207,27 +207,19 @@
     };
 
     this.newWindow = function ($event) {
-      nwWindow.open("app.html", {}, newWindow => {
-
-      });
+      nwWindow.open("app.html", {}, newWindow => { });
     };
 
     this.showAbout = function ($event) {
-      nwWindow.open("about.html", {}, newWindow => {
-
-      });
+      nwWindow.open("about.html", {}, newWindow => { });
     };
 
     this.showSettings = function ($event) {
-      nwWindow.open("settings.html", {}, newWindow => {
-
-      });
+      nwWindow.open("settings.html", {}, newWindow => { });
     };
 
     this.showSearch = function ($event) {
-      nwWindow.open("search.html", {}, newWindow => {
-
-      });
+      nwWindow.open("search.html", {}, newWindow => { });
     };
 
     this.info = {
@@ -255,6 +247,102 @@
         new Directory(process.env.HOME, "d Videos"),
       ],
     };
+
+    this.customItemIcon = function (item) {
+      if (!itemHasIconAssignment(item.uri)) {
+        return "";
+      }
+
+      return itemIconAssignment(item.uri);
+    }
+
+    this.hasCustomIcon = function (item) {
+      if (this.isDirectory(item)) {
+        return false;
+      }
+
+      return itemHasIconAssignment(item.uri);
+    }
+
+    this.onClickCreateFile = function ($ev) {
+      var confirm = $mdDialog.prompt()
+        .title('Create New File')
+        .placeholder('File name')
+        .ariaLabel('File name')
+        .initialValue('New File')
+        .targetEvent($ev)
+        .ok('Create File')
+        .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function(result) {
+        try {
+          fs.writeFileSync(path.join(currentPath(), result));
+          reloadContents();
+        }
+        catch (err) {
+          console.log("Create file failed:");
+          console.log(err);
+        }
+      }, function() {
+        console.log('You didn\'t name your file.');
+      });
+    };
+
+    this.onClickCreateFolder = function ($ev) {
+      var confirm = $mdDialog.prompt()
+        .title('Create New Folder')
+        .placeholder('Folder name')
+        .ariaLabel('Folder name')
+        .initialValue('New Folder')
+        .targetEvent($ev)
+        .ok('Create Folder')
+        .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function(result) {
+        try {
+          fs.mkdirSync(path.join(currentPath(), result));
+          reloadContents();
+        }
+        catch (err) {
+          console.log("Create folder failed:");
+          console.log(err);
+        }
+      }, function() {
+        console.log('You didn\'t name your folder.');
+      });
+    };
+
+    this.onClickCreateLink = function ($ev) {
+      var confirm = $mdDialog.prompt()
+        .title('Create New Link')
+        .placeholder('Link name')
+        .ariaLabel('Link name')
+        .initialValue('New Link')
+        .targetEvent($ev)
+        .ok('Create Link')
+        .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function(result) {
+        console.log('You decided to name your link ' + result + '.');
+      }, function() {
+        console.log('You didn\'t name your link.');
+      });
+    };
+
+    function itemHasIconAssignment (uri) {
+      return !!itemIconAssignment(uri);
+    }
+
+    function itemIconAssignment (uri) {
+      if (/package\.json$/g.test(uri)) {
+        return iconPath("icon-node-192x192.png");
+      }
+      return "";
+    }
+
+    function iconPath (x) {
+      return x;
+    }
 
     this.isDirectory = function (directory) {
       return Directory.is(directory);
