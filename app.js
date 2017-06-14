@@ -276,7 +276,7 @@
 
       $mdDialog.show(confirm).then(function(result) {
         try {
-          fs.writeFileSync(path.join(currentPath(), result));
+          fs.writeFileSync(path.join(currentPath(), result), "A new file!");
           reloadContents();
         }
         catch (err) {
