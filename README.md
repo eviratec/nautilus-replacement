@@ -2,6 +2,8 @@
 
 For [Ubuntu](https://www.ubuntu.com/).
 
+Using [Angular.js](https://angularjs.org/), [ACE Editor](https://ace.c9.io/), and [NW.js](https://nwjs.io/).
+
 ## Getting started (for users)
 
 ### Requirements
@@ -12,9 +14,9 @@ For [Ubuntu](https://www.ubuntu.com/).
 ### Install it
 
 Install via NPM
-  ```shell
-  $ npm install -g nautilus-replacement
-  ```
+```shell
+$ npm install -g nautilus-replacement
+```
 
 ### Start it
 
@@ -40,11 +42,11 @@ $ nautilus-replacement
   $ cd ~/Downloads
   $ wget -nc -O - https://dl.nwjs.io/v0.23.1/nwjs-sdk-v0.23.1-linux-x64.tar.gz | tar xvz
   ```
-2. Fetch the *nautilus-replacement* (this) project dev source
+2. Fetch the *nautilus-replacement* (this) project development source
   ```shell
   $ cd ~/Downloads
-  $ wget -nc -O - https://github.com/eviratec/nautilus-replacement/archive/dev.tar.gz | tar xvz
-  $ cd nautilus-replacement-dev
+  $ wget -nc -O - https://github.com/eviratec/nautilus-replacement/archive/development.tar.gz | tar xvz
+  $ cd nautilus-replacement-development
   ```
 3. Install NPM dependencies
   ```shell
@@ -73,7 +75,7 @@ $ nautilus-replacement
 By [Eviratec Software](https://www.eviratec.com.au)
 
 ```
-Copyright (c) 2017 Callan Peter Milne
+Copyright (c) 2017 - 2018 Callan Peter Milne
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
